@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprawdzanie pełnoletności</title>
+</head>
+<body>
+    <h1>1.Sprawdzanie pełnoletności</h1>
+    <button onclick="sprawdzPelnoletnosc()">Sprawdź wiek</button>
+    
+    <script>
+        function sprawdzPelnoletnosc() {
+            const wiek = prompt("Podaj swój wiek:");
+
+            if (wiek >= 18) {
+                console.log("Jesteś pełnoletni.");
+            } else {
+                console.log("Nie jesteś pełnoletni.");
+            }
+        }
+    </script>
+</body>
+<body>
+    <h1>2.Konwersja temperatury</h1>
+    <label for="celsius">Podaj temperaturę w stopniach Celsjusza:</label>
+    <input type="number" id="celsius" placeholder="np. 25">
+    <button onclick="konwertuj()">Konwertuj</button>
+
+    <script>
+        function konwertuj() {
+            const celsius = document.getElementById('celsius').value;
+
+            const fahrenheit = (celsius * 9/5) + 32;
+
+            console.log(`Temperatura w Fahrenheita: ${fahrenheit}`);
+        }
+    </script>
+</body>
+<body>
+    <h1>3.Operacje na tablicy liczb</h1>
+    <button onclick="wykonajOperacje()">Uruchom operacje</button>
+
+    <script>
+        function wykonajOperacje() {
+            const liczby = [1, 2, 7, 4, 6, 3, 5];
+            const numerAlbumu = 123456;
+            
+            const suma = liczby.reduce((acc, curr) => acc + curr, 0);
+            console.log(`Suma wartości: ${suma}`);
+            
+            const parzyste = liczby.filter(num => num % 2 === 0);
+            console.log(`Liczby parzyste: ${parzyste}`);
+            
+            const pomnozone = liczby.map(num => num * 3);
+            console.log(`Wartości pomnożone razy 3: ${pomnozone}`);
+            
+            liczby.push(numerAlbumu);
+            const indeksNumeruAlbumu = liczby.indexOf(numerAlbumu);
+            console.log(`Numer albumu dodany do tablicy. Indeks: ${indeksNumeruAlbumu}`);
+            
+            const srednia = suma / liczby.length;
+            console.log(`Średnia arytmetyczna: ${srednia}`);
+            
+            const najwieksza = Math.max(...liczby);
+            console.log(`Największa liczba: ${najwieksza}`);
+            
+            const wybranaWartosc = 5;
+            const wystapienia = liczby.filter(num => num === wybranaWartosc).length;
+            console.log(`Liczba wystąpień wartości ${wybranaWartosc}: ${wystapienia}`);
+        }
+    </script>
+</body>
+<body>
+    <h1>4.Generowanie ciągu Fibonacciego</h1>
+    <button onclick="generujFibonacci()">Generuj</button>
+
+    <script>
+        function generujFibonacci() {
+            const fibonacci = [0, 1];
+
+            for (let i = 2; i < 100; i++) {
+                fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+            }
+
+            console.log(fibonacci);
+        }
+    </script>
+</body>
+</html>
